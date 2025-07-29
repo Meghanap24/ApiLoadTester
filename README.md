@@ -1,86 +1,28 @@
 Java API Load Testing Tool
+--------------------------------
+A beginner-friendly Java-based API Load Testing Tool to simulate multiple concurrent API requests, 
+measure response times, and log results into a CSV file with a summary report.
 
-A beginner-friendly Java-based API Load Testing Tool to simulate multiple concurrent API requests, measure response times, and log results in a CSV file with a summary report.
-
--------------------------------------------------
 Features:
--------------------------------------------------
+--------------------------------
 - Simulates concurrent API requests using Java threads
 - Logs status codes and response times to results.csv
 - Generates summary report (average, fastest, slowest times)
-- Simple CLI input: API URL, total requests, number of threads
+- Simple CLI: API URL, total requests, number of threads
 
--------------------------------------------------
 Tech Stack:
--------------------------------------------------
+--------------------------------
 - Java 17
 - Core Java (HttpURLConnection, Threads)
 - CSV Writing (FileWriter)
 
--------------------------------------------------
 Project Structure:
--------------------------------------------------
+--------------------------------
 ApiLoadTester/
   src/main/java/
-    ApiLoadTester.java        -> Main combined tool
-    CsvWriterHelper.java      -> CSV writer utility
-  results.csv                 -> Output results
-  pom.xml                     -> Maven configuration
-  README.md                   -> Project documentation
-
--------------------------------------------------
-How to Run:
--------------------------------------------------
-1. Clone the repository
-   git clone https://github.com/Meghanap24/ApiLoadTester.git
-   cd ApiLoadTester
-
-2. Open in IntelliJ or any Java IDE
-
-3. Run the application:
-   Run → ApiLoadTester.main()
-
-   Enter:
-   Enter API URL: https://jsonplaceholder.typicode.com/posts/1
-   Enter total number of requests: 20
-   Enter number of threads: 5
-
--------------------------------------------------
-Example Output:
--------------------------------------------------
-Console:
-🚀 Starting Load Test...
-
-Thread-0 | Code: 200 | Time: 985 ms
-Thread-1 | Code: 200 | Time: 1102 ms
-Thread-2 | Code: 200 | Time: 233 ms
-...
-
-📊 Summary Report
--------------------------
-Total Requests: 20
-Average Time: 312.5 ms
-Fastest Time: 174 ms
-Slowest Time: 1102 ms
-
-CSV (results.csv):
-Thread,StatusCode,ResponseTime(ms)
-Thread-0,200,985
-Thread-1,200,1102
-Thread-2,200,233
-Thread-3,200,326
-...
-
--------------------------------------------------
-Resume Description:
--------------------------------------------------
-Java API Load Testing Tool – Developed a multithreaded Java application to simulate concurrent API requests, measure response times, log results in CSV, and generate automated performance summaries for API scalability testing.
-
--------------------------------------------------
-Future Enhancements:
--------------------------------------------------
-- Add POST/PUT/DELETE method support
-- Visualize results with charts (JavaFX or Python Matplotlib)
-- Add error handling for failed requests
-- Export summary in JSON/Excel format
-﻿# ApiLoadTester
+    ApiLoadTester.java       - Main combined tool
+    CsvWriterHelper.java     - CSV writer utility
+    SimpleApiTest.java       - Single API request test
+    LoopApiTest.java         - Multiple requests loop test
+    ThreadedApiTest.java     - Multithreaded API testing
+    SummaryReport.java       - Summary results generator
